@@ -22,6 +22,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - run: ls && ls csharp
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo "<Project Sdk=\"Microsoft.NET.Sdk\"><PropertyGroup><TargetFramework>netcoreapp2.0</TargetFramework><GenerateAssemblyInfo>false</GenerateAssemblyInfo></PropertyGroup></Project>" > csharp/Intel.RealSense/Intel.RealSense.csproj
