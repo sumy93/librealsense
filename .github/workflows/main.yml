@@ -22,16 +22,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - run: cd wrappers
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo "<Project Sdk=\"Microsoft.NET.Sdk\"><PropertyGroup><TargetFramework>netcoreapp2.0</TargetFramework><GenerateAssemblyInfo>false</GenerateAssemblyInfo></PropertyGroup></Project>" > csharp/Intel.RealSense/Intel.RealSense.csproj
+        run: echo "<Project Sdk=\"Microsoft.NET.Sdk\"><PropertyGroup><TargetFramework>netcoreapp2.0</TargetFramework><GenerateAssemblyInfo>false</GenerateAssemblyInfo></PropertyGroup></Project>" > wrappers/csharp/Intel.RealSense/Intel.RealSense.csproj
         
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '3.1.x'
-      - run: cd csharp/Intel.RealSense && dotnet build
+      - run: cd wrappers/csharp/Intel.RealSense && dotnet build
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
